@@ -1,0 +1,160 @@
+======================================================================
+=== LIVE FORWARD-VALIDATION STARTED ===
+======================================================================
+Optimal lineup = position-agnostic top-9 by model score vs hand
+(mirrors lineup_forward_test.py -- default since 2026-07-09).
+Roster loaded with IL/restricted players INCLUDED (retrospective
+mode -- current injury status must not leak into past cutoffs).
+
+Rolling cutoff schedule (11 windows): 2026-04-15, 2026-04-29, 2026-05-13, 2026-05-27, 2026-06-10, 2026-06-24, 2026-07-08, 2026-07-22, 2026-08-05, 2026-08-19, 2026-09-02
+
+Loading player name register ...Gathering player lookup table. This may take a moment.
+ 24,939 players loaded
+
+Roster file sheets found: ['vs RHP', 'vs LHP']
+Loaded vs RHP: 1058 rows.
+Loaded vs LHP: 1058 rows.
+  Excluded 1164 pitcher row(s) from roster.
+  Excluded 4 roster row(s) with no MLBAMID.
+  Roster loaded with 474 unique position players.
+
+  Fetching full season-to-date (shared across all cutoffs)  (2026-03-25 -> 2026-09-27) ...This is a large query, it may take a moment to complete
+ 716,792 pitches
+
+--- Cutoff: 2026-04-15 ---
+  Building master tables as of 2026-04-15 ...
+  160 player(s) have fewer than 30 PA in 2026 splits; scored off career/total/recent instead (no longer excluded).
+  405 player(s) have fewer than 30 PA in 2026 splits; scored off career/total/recent instead (no longer excluded).
+  60 team-hand combinations graded.
+
+--- Cutoff: 2026-04-29 ---
+  Building master tables as of 2026-04-29 ...
+  124 player(s) have fewer than 30 PA in 2026 splits; scored off career/total/recent instead (no longer excluded).
+  305 player(s) have fewer than 30 PA in 2026 splits; scored off career/total/recent instead (no longer excluded).
+  60 team-hand combinations graded.
+
+--- Cutoff: 2026-05-13 ---
+  Building master tables as of 2026-05-13 ...
+  125 player(s) have fewer than 30 PA in 2026 splits; scored off career/total/recent instead (no longer excluded).
+  244 player(s) have fewer than 30 PA in 2026 splits; scored off career/total/recent instead (no longer excluded).
+  60 team-hand combinations graded.
+
+--- Cutoff: 2026-05-27 ---
+  Building master tables as of 2026-05-27 ...
+  127 player(s) have fewer than 30 PA in 2026 splits; scored off career/total/recent instead (no longer excluded).
+  235 player(s) have fewer than 30 PA in 2026 splits; scored off career/total/recent instead (no longer excluded).
+  60 team-hand combinations graded.
+
+--- Cutoff: 2026-06-10 ---
+  Building master tables as of 2026-06-10 ...
+  129 player(s) have fewer than 30 PA in 2026 splits; scored off career/total/recent instead (no longer excluded).
+  236 player(s) have fewer than 30 PA in 2026 splits; scored off career/total/recent instead (no longer excluded).
+  60 team-hand combinations graded.
+
+--- Cutoff: 2026-06-24 ---
+  Building master tables as of 2026-06-24 ...
+  128 player(s) have fewer than 30 PA in 2026 splits; scored off career/total/recent instead (no longer excluded).
+  235 player(s) have fewer than 30 PA in 2026 splits; scored off career/total/recent instead (no longer excluded).
+  60 team-hand combinations graded.
+
+--- Cutoff: 2026-07-08 ---
+  Building master tables as of 2026-07-08 ...
+  127 player(s) have fewer than 30 PA in 2026 splits; scored off career/total/recent instead (no longer excluded).
+  231 player(s) have fewer than 30 PA in 2026 splits; scored off career/total/recent instead (no longer excluded).
+  60 team-hand combinations graded.
+
+--- Cutoff: 2026-07-22 ---
+  Building master tables as of 2026-07-22 ...
+  129 player(s) have fewer than 30 PA in 2026 splits; scored off career/total/recent instead (no longer excluded).
+  221 player(s) have fewer than 30 PA in 2026 splits; scored off career/total/recent instead (no longer excluded).
+  59 team-hand combinations graded.
+
+--- Cutoff: 2026-08-05 ---
+  Building master tables as of 2026-08-05 ...
+  133 player(s) have fewer than 30 PA in 2026 splits; scored off career/total/recent instead (no longer excluded).
+  217 player(s) have fewer than 30 PA in 2026 splits; scored off career/total/recent instead (no longer excluded).
+  58 team-hand combinations graded.
+
+--- Cutoff: 2026-08-19 ---
+  Building master tables as of 2026-08-19 ...
+  137 player(s) have fewer than 30 PA in 2026 splits; scored off career/total/recent instead (no longer excluded).
+  210 player(s) have fewer than 30 PA in 2026 splits; scored off career/total/recent instead (no longer excluded).
+  52 team-hand combinations graded.
+
+--- Cutoff: 2026-09-02 ---
+  Building master tables as of 2026-09-02 ...
+  132 player(s) have fewer than 30 PA in 2026 splits; scored off career/total/recent instead (no longer excluded).
+  200 player(s) have fewer than 30 PA in 2026 splits; scored off career/total/recent instead (no longer excluded).
+  31 team-hand combinations graded.
+
+Build-completeness log written to: ./live_forward_validation_build_log.csv
+(0/660 team-hand-cutoff builds had at least one unfilled slot.)
+(0/660 team-hand-cutoff builds used at least one fallback-pool slot.)
+
+
+======================================================================
+LIVE FORWARD-VALIDATION RESULTS
+======================================================================
+
+Cutoffs tested: 2026-04-15, 2026-04-29, 2026-05-13, 2026-05-27, 2026-06-10, 2026-06-24, 2026-07-08, 2026-07-22, 2026-08-05, 2026-08-19, 2026-09-02
+Team-hand-cutoff combinations graded: 620
+
+Per-combo detail written to: ./live_forward_validation_detail_2026-11-03.csv
+
+Overall: optimal beat real in 355/620 (57.3%)
+Overall mean wOBA gap (optimal - real): 0.00272
+
+By hand -- vs RHP: 213/328 (64.9%), mean gap 0.00423
+By hand -- vs LHP: 142/292 (48.6%), mean gap 0.00101
+
+By cutoff:
+  2026-04-15: 29/60 (48.3%), mean gap 0.00019
+  2026-04-29: 36/60 (60.0%), mean gap 0.00274
+  2026-05-13: 33/60 (55.0%), mean gap 0.00012
+  2026-05-27: 33/60 (55.0%), mean gap 0.00194
+  2026-06-10: 33/60 (55.0%), mean gap 0.00116
+  2026-06-24: 36/60 (60.0%), mean gap 0.00065
+  2026-07-08: 35/60 (58.3%), mean gap 0.00438
+  2026-07-22: 38/59 (64.4%), mean gap 0.00471
+  2026-08-05: 35/58 (60.3%), mean gap 0.00591
+  2026-08-19: 31/52 (59.6%), mean gap 0.00503
+  2026-09-02: 16/31 (51.6%), mean gap 0.0042
+
+Per-team rollup (sorted by mean gap, descending):
+Team    N   Wins  Win%    Mean Gap
+----  ---  -----  ------  --------
+TOR    21     20   95.2%   0.01619
+BAL    21     17   81.0%   0.01171
+CWS    21     16   76.2%   0.01155
+NYY    19     13   68.4%   0.00889
+SEA    22     17   77.3%   0.00889
+HOU    21     14   66.7%   0.00772
+BOS    19     12   63.2%   0.00653
+CHC    21     12   57.1%   0.00627
+WSH    20     15   75.0%   0.00579
+CLE    21     16   76.2%   0.00535
+PIT    20     15   75.0%   0.00434
+PHI    21     12   57.1%   0.00404
+DET    21     14   66.7%   0.00355
+ATL    21     14   66.7%   0.00286
+MIL    21     15   71.4%   0.00224
+AZ     21     11   52.4%   0.00171
+SF     18      7   38.9%   0.00127
+LAA    21     10   47.6%   0.00123
+COL    21      9   42.9%   0.00115
+TEX    22      9   40.9%   0.00057
+KC     20      9   45.0%   0.00035
+CIN    21      9   42.9%   0.00011
+STL    20     12   60.0%  -0.00021
+LAD    22     12   54.5%  -0.00181
+TB     21     11   52.4%  -0.00196
+SD     21      7   33.3%  -0.00272
+ATH    19      7   36.8%  -0.00388
+MIN    21      5   23.8%  -0.00561
+NYM    21      9   42.9%  -0.00575
+MIA    21      6   28.6%  -0.00882
+
+22/30 teams favor the optimal lineup on average.
+
+Summary written to: ./live_forward_validation_summary.json
+(test.py's run_comparison() reads this file to display forward-validated numbers.)

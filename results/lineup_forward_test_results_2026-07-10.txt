@@ -1,0 +1,98 @@
+=== LINEUP FORWARD TEST -- team-constrained, non-circular ===
+Results saved to: ./lineup_forward_test_results_2026-07-10.txt
+
+Real lineup  = team's top-9 roster players by PRE-cutoff PA vs the
+               SPECIFIC pitcher hand (mirrors live_forward_validation.py)
+Optimal lineup = team's top-9 roster players by the model's
+                 PRE-cutoff predicted stabilized wOBA
+Both graded on REAL POST-cutoff actual wOBA. No window is
+reused for two purposes anywhere in this chain.
+
+Per-combo detail written to: ./lineup_forward_test_detail_2026-07-10.csv
+
+============================================================
+OVERALL  (1047 team-window-hand combinations graded)
+============================================================
+  Optimal lineup beat real lineup: 664/1047  (63.4%)
+  Mean wOBA gap (optimal - real):   +0.0049
+  Median wOBA gap:                  +0.0043
+  Illustrative runs/600 PA @ wOBA scale~1.2:  +2.44   (rough translation only -- NOT a validated per-year constant,
+    not used for win/loss above -- intuition aid only)
+  Team-windows dropped for thin roster (<9 eligible players): 0
+
+------------------------------------------------------------
+BY PITCHER HANDEDNESS
+------------------------------------------------------------
+  vs LHP:  297/509  (58.3%)   mean gap +0.0043
+  vs RHP:  367/538  (68.2%)   mean gap +0.0055
+
+------------------------------------------------------------
+BY CUTOFF DATE (more in-season data as the season progresses)
+------------------------------------------------------------
+  june 1:  223/358  (62.3%)   mean gap +0.0037
+  july 1:  222/355  (62.5%)   mean gap +0.0051
+  aug 1:  219/334  (65.6%)   mean gap +0.0059
+
+------------------------------------------------------------
+PER-TEAM ROLLUP (win rate across all its graded windows/hands)
+------------------------------------------------------------
+  PIT   28/34    mean gap +0.0139
+  COL   28/34    mean gap +0.0114
+  HOU   29/36    mean gap +0.0110
+  SD    26/36    mean gap +0.0090
+  TEX   25/36    mean gap +0.0082
+  BOS   25/36    mean gap +0.0081
+  BAL   25/35    mean gap +0.0080
+  MIN   23/36    mean gap +0.0073
+  WSH   25/35    mean gap +0.0073
+  CWS   23/36    mean gap +0.0063
+  KC    24/36    mean gap +0.0056
+  MIA   24/35    mean gap +0.0054
+  NYY   20/35    mean gap +0.0052
+  SEA   21/35    mean gap +0.0048
+  STL   23/35    mean gap +0.0047
+  CHC   25/35    mean gap +0.0044
+  TB    23/35    mean gap +0.0042
+  MIL   19/33    mean gap +0.0039
+  DET   22/35    mean gap +0.0030
+  CIN   19/35    mean gap +0.0028
+  CLE   24/36    mean gap +0.0024
+  NYM   24/36    mean gap +0.0024
+  PHI   19/35    mean gap +0.0022
+  TOR   21/36    mean gap +0.0022
+  SF    23/36    mean gap +0.0017
+  LAA   14/28    mean gap +0.0010
+  ATL   11/34    mean gap +0.0006
+  AZ    19/36    mean gap +0.0005
+  ATH   13/32    mean gap -0.0006
+  LAD   19/35    mean gap -0.0013
+
+  Optimal favored more often than not in 27 of 30 teams tested.
+
+------------------------------------------------------------
+MOST LOPSIDED CASES
+------------------------------------------------------------
+  Optimal lineup won BIGGEST:
+    2021 aug_1    CWS   vs LHP  gap +0.0794  (real 0.402 n=6, opt 0.481 n=5)
+    2022 aug_1    SEA   vs LHP  gap +0.0629  (real 0.308 n=9, opt 0.371 n=6)
+    2022 july_1   CWS   vs LHP  gap +0.0621  (real 0.286 n=8, opt 0.348 n=7)
+    2022 june_1   PIT   vs LHP  gap +0.0569  (real 0.271 n=7, opt 0.328 n=7)
+    2022 july_1   PIT   vs LHP  gap +0.0544  (real 0.274 n=6, opt 0.329 n=7)
+    2024 aug_1    BOS   vs LHP  gap +0.0523  (real 0.328 n=8, opt 0.380 n=5)
+    2022 july_1   LAA   vs LHP  gap +0.0508  (real 0.288 n=8, opt 0.339 n=7)
+    2025 aug_1    HOU   vs RHP  gap +0.0492  (real 0.279 n=8, opt 0.328 n=7)
+    2023 aug_1    KC    vs LHP  gap +0.0473  (real 0.326 n=6, opt 0.373 n=5)
+    2024 aug_1    MIN   vs LHP  gap +0.0463  (real 0.297 n=7, opt 0.343 n=6)
+  Real lineup won BIGGEST:
+    2021 aug_1    LAD   vs LHP  gap -0.0454  (real 0.366 n=8, opt 0.321 n=8)
+    2022 aug_1    STL   vs LHP  gap -0.0450  (real 0.445 n=6, opt 0.400 n=7)
+    2021 june_1   DET   vs LHP  gap -0.0446  (real 0.370 n=7, opt 0.325 n=8)
+    2019 july_1   ATH   vs LHP  gap -0.0418  (real 0.357 n=8, opt 0.315 n=6)
+    2024 june_1   SF    vs LHP  gap -0.0393  (real 0.317 n=8, opt 0.278 n=8)
+    2025 june_1   CLE   vs LHP  gap -0.0390  (real 0.296 n=9, opt 0.257 n=7)
+    2025 july_1   LAD   vs LHP  gap -0.0388  (real 0.332 n=8, opt 0.293 n=7)
+    2019 july_1   SEA   vs LHP  gap -0.0378  (real 0.359 n=6, opt 0.321 n=6)
+    2024 aug_1    SF    vs LHP  gap -0.0378  (real 0.350 n=6, opt 0.312 n=7)
+    2022 aug_1    NYM   vs LHP  gap -0.0371  (real 0.359 n=9, opt 0.322 n=8)
+
+=== DONE ===

@@ -1,0 +1,157 @@
+=== LHP WIN-RATE TUNER (symmetric metric) ===
+Results saved to: ./tuner_lhp_winrate_results_2026-07-10.txt
+
+League platoon priors vs LHP (from 2016/2017/2018 only, PA-weighted, players with >= 50 PA each hand):
+  RHB vs LHP: ratio 1.0311
+  LHB vs LHP: ratio 0.9036
+
+Preloading 18 windows ...
+  18 windows loaded.
+
+Baseline gate: 510 combos matched, max |gap diff| = 0.00e+00 -- PASS
+Baseline (production LHP constants): win rate 56.7%, mean gap +0.0040, n=510
+  by year: 2019 60.9%; 2021 47.1%; 2022 61.8%; 2023 62.4%; 2024 60.8%; 2025 47.1%
+
+==================================================================
+SWEEP: WC   candidates: 0.2, 0.35, 0.45, 0.5695, 0.7, 0.85
+==================================================================
+  WC=0.2: all-years win rate 57.0%, mean gap +0.0034, n=512
+     by year: 2019 61.6%; 2021 47.1%; 2022 64.0%; 2023 57.6%; 2024 61.4%; 2025 50.0%
+  WC=0.35: all-years win rate 56.2%, mean gap +0.0038, n=511
+     by year: 2019 59.8%; 2021 48.2%; 2022 64.0%; 2023 57.6%; 2024 57.5%; 2025 49.4%
+  WC=0.45: all-years win rate 56.5%, mean gap +0.0041, n=510
+     by year: 2019 60.9%; 2021 48.2%; 2022 61.8%; 2023 61.2%; 2024 58.2%; 2025 48.2%
+  WC=0.5695: all-years win rate 56.7%, mean gap +0.0040, n=510  <- production
+     by year: 2019 60.9%; 2021 47.1%; 2022 61.8%; 2023 62.4%; 2024 60.8%; 2025 47.1%
+  WC=0.7: all-years win rate 57.1%, mean gap +0.0042, n=506
+     by year: 2019 61.6%; 2021 48.2%; 2022 65.2%; 2023 61.9%; 2024 59.0%; 2025 46.4%
+  WC=0.85: all-years win rate 57.7%, mean gap +0.0043, n=506
+     by year: 2019 59.3%; 2021 48.2%; 2022 66.3%; 2023 63.1%; 2024 60.3%; 2025 48.8%
+  Walk-forward CV (train = years before holdout):
+    holdout 2023: picked WC=0.7 -> test win rate 61.9% vs baseline 62.4% (delta -0.4pp)
+    holdout 2024: picked WC=0.85 -> test win rate 60.3% vs baseline 60.8% (delta -0.5pp)
+    holdout 2025: picked WC=0.85 -> test win rate 48.8% vs baseline 47.1% (delta +1.8pp)
+    mean held-out win-rate delta: +0.3pp
+  Leave-one-year-out CV (supplementary):
+    holdout 2019: picked WC=0.85 -> test 59.3% vs baseline 60.9% (delta -1.6pp)
+    holdout 2021: picked WC=0.85 -> test 48.2% vs baseline 47.1% (delta +1.2pp)
+    holdout 2022: picked WC=0.85 -> test 66.3% vs baseline 61.8% (delta +4.5pp)
+    holdout 2023: picked WC=0.2 -> test 57.6% vs baseline 62.4% (delta -4.7pp)
+    holdout 2024: picked WC=0.85 -> test 60.3% vs baseline 60.8% (delta -0.5pp)
+    holdout 2025: picked WC=0.85 -> test 48.8% vs baseline 47.1% (delta +1.8pp)
+    mean held-out win-rate delta: +0.1pp
+
+==================================================================
+SWEEP: RPC   candidates: 100, 300, 500, 711, 900, 1200
+==================================================================
+  RPC=100: all-years win rate 59.2%, mean gap +0.0041, n=503
+     by year: 2019 59.3%; 2021 52.9%; 2022 61.4%; 2023 70.2%; 2024 64.9%; 2025 47.0%
+  RPC=300: all-years win rate 59.2%, mean gap +0.0043, n=507
+     by year: 2019 60.5%; 2021 49.4%; 2022 64.8%; 2023 69.0%; 2024 64.6%; 2025 47.1%
+  RPC=500: all-years win rate 57.9%, mean gap +0.0045, n=506
+     by year: 2019 61.6%; 2021 49.4%; 2022 65.2%; 2023 61.9%; 2024 60.3%; 2025 48.8%
+  RPC=711: all-years win rate 56.7%, mean gap +0.0040, n=510  <- production
+     by year: 2019 60.9%; 2021 47.1%; 2022 61.8%; 2023 62.4%; 2024 60.8%; 2025 47.1%
+  RPC=900: all-years win rate 55.8%, mean gap +0.0038, n=509
+     by year: 2019 60.9%; 2021 47.1%; 2022 60.7%; 2023 61.2%; 2024 57.7%; 2025 47.1%
+  RPC=1200: all-years win rate 56.3%, mean gap +0.0041, n=510
+     by year: 2019 60.9%; 2021 49.4%; 2022 60.7%; 2023 58.8%; 2024 58.2%; 2025 49.4%
+  Walk-forward CV (train = years before holdout):
+    holdout 2023: picked RPC=500 -> test win rate 61.9% vs baseline 62.4% (delta -0.4pp)
+    holdout 2024: picked RPC=300 -> test win rate 64.6% vs baseline 60.8% (delta +3.8pp)
+    holdout 2025: picked RPC=100 -> test win rate 47.0% vs baseline 47.1% (delta -0.1pp)
+    mean held-out win-rate delta: +1.1pp
+  Leave-one-year-out CV (supplementary):
+    holdout 2019: picked RPC=100 -> test 59.3% vs baseline 60.9% (delta -1.6pp)
+    holdout 2021: picked RPC=300 -> test 49.4% vs baseline 47.1% (delta +2.4pp)
+    holdout 2022: picked RPC=100 -> test 61.4% vs baseline 61.8% (delta -0.4pp)
+    holdout 2023: picked RPC=300 -> test 69.0% vs baseline 62.4% (delta +6.7pp)
+    holdout 2024: picked RPC=100 -> test 64.9% vs baseline 60.8% (delta +4.2pp)
+    holdout 2025: picked RPC=100 -> test 47.0% vs baseline 47.1% (delta -0.1pp)
+    mean held-out win-rate delta: +1.9pp
+
+==================================================================
+SWEEP: XB_ALL   candidates: 0.5, 0.65, 0.8, 0.9187, 1.0
+==================================================================
+  XB_ALL=0.5: all-years win rate 55.3%, mean gap +0.0030, n=508
+     by year: 2019 60.5%; 2021 43.5%; 2022 62.9%; 2023 59.5%; 2024 55.7%; 2025 49.4%
+  XB_ALL=0.65: all-years win rate 58.4%, mean gap +0.0039, n=510
+     by year: 2019 61.6%; 2021 51.8%; 2022 62.9%; 2023 60.0%; 2024 60.0%; 2025 54.1%
+  XB_ALL=0.8: all-years win rate 57.7%, mean gap +0.0039, n=511
+     by year: 2019 60.9%; 2021 50.6%; 2022 61.8%; 2023 62.4%; 2024 60.0%; 2025 50.6%
+  XB_ALL=0.9187: all-years win rate 56.7%, mean gap +0.0040, n=510  <- production
+     by year: 2019 60.9%; 2021 47.1%; 2022 61.8%; 2023 62.4%; 2024 60.8%; 2025 47.1%
+  XB_ALL=1.0: all-years win rate 57.6%, mean gap +0.0038, n=507
+     by year: 2019 59.8%; 2021 49.4%; 2022 64.0%; 2023 59.5%; 2024 61.5%; 2025 51.2%
+  Walk-forward CV (train = years before holdout):
+    holdout 2023: picked XB_ALL=0.65 -> test win rate 60.0% vs baseline 62.4% (delta -2.4pp)
+    holdout 2024: picked XB_ALL=0.65 -> test win rate 60.0% vs baseline 60.8% (delta -0.8pp)
+    holdout 2025: picked XB_ALL=0.65 -> test win rate 54.1% vs baseline 47.1% (delta +7.1pp)
+    mean held-out win-rate delta: +1.3pp
+  Leave-one-year-out CV (supplementary):
+    holdout 2019: picked XB_ALL=0.65 -> test 61.6% vs baseline 60.9% (delta +0.7pp)
+    holdout 2021: picked XB_ALL=0.65 -> test 51.8% vs baseline 47.1% (delta +4.7pp)
+    holdout 2022: picked XB_ALL=0.65 -> test 62.9% vs baseline 61.8% (delta +1.1pp)
+    holdout 2023: picked XB_ALL=0.65 -> test 60.0% vs baseline 62.4% (delta -2.4pp)
+    holdout 2024: picked XB_ALL=0.65 -> test 60.0% vs baseline 60.8% (delta -0.8pp)
+    holdout 2025: picked XB_ALL=0.65 -> test 54.1% vs baseline 47.1% (delta +7.1pp)
+    mean held-out win-rate delta: +1.7pp
+
+==================================================================
+SWEEP: PB   candidates: 0.31, 0.5, 0.7833, 1.0
+==================================================================
+  PB=0.31: all-years win rate 56.8%, mean gap +0.0037, n=509
+     by year: 2019 62.1%; 2021 49.4%; 2022 61.8%; 2023 59.5%; 2024 59.5%; 2025 48.2%
+  PB=0.5: all-years win rate 56.6%, mean gap +0.0038, n=509
+     by year: 2019 62.1%; 2021 48.2%; 2022 61.8%; 2023 59.5%; 2024 59.5%; 2025 48.2%
+  PB=0.7833: all-years win rate 56.7%, mean gap +0.0040, n=510  <- production
+     by year: 2019 60.9%; 2021 47.1%; 2022 61.8%; 2023 62.4%; 2024 60.8%; 2025 47.1%
+  PB=1.0: all-years win rate 57.2%, mean gap +0.0040, n=509
+     by year: 2019 63.2%; 2021 44.7%; 2022 61.8%; 2023 61.2%; 2024 63.3%; 2025 48.8%
+  Walk-forward CV (train = years before holdout):
+    holdout 2023: picked PB=0.31 -> test win rate 59.5% vs baseline 62.4% (delta -2.8pp)
+    holdout 2024: picked PB=0.31 -> test win rate 59.5% vs baseline 60.8% (delta -1.3pp)
+    holdout 2025: picked PB=1.0 -> test win rate 48.8% vs baseline 47.1% (delta +1.8pp)
+    mean held-out win-rate delta: -0.8pp
+  Leave-one-year-out CV (supplementary):
+    holdout 2019: picked PB=1.0 -> test 63.2% vs baseline 60.9% (delta +2.3pp)
+    holdout 2021: picked PB=1.0 -> test 44.7% vs baseline 47.1% (delta -2.4pp)
+    holdout 2022: picked PB=1.0 -> test 61.8% vs baseline 61.8% (delta +0.0pp)
+    holdout 2023: picked PB=1.0 -> test 61.2% vs baseline 62.4% (delta -1.2pp)
+    holdout 2024: picked PB=0.31 -> test 59.5% vs baseline 60.8% (delta -1.3pp)
+    holdout 2025: picked PB=1.0 -> test 48.8% vs baseline 47.1% (delta +1.8pp)
+    mean held-out win-rate delta: -0.1pp
+
+==================================================================
+SWEEP: PRIOR_PA   candidates: 0.0, 50.0, 100.0, 200.0, 400.0, 800.0, 1600.0
+==================================================================
+  PRIOR_PA=0.0: all-years win rate 56.7%, mean gap +0.0040, n=510  <- production
+     by year: 2019 60.9%; 2021 47.1%; 2022 61.8%; 2023 62.4%; 2024 60.8%; 2025 47.1%
+  PRIOR_PA=50.0: all-years win rate 57.5%, mean gap +0.0041, n=510
+     by year: 2019 60.9%; 2021 49.4%; 2022 61.8%; 2023 61.2%; 2024 60.8%; 2025 50.6%
+  PRIOR_PA=100.0: all-years win rate 58.0%, mean gap +0.0043, n=510
+     by year: 2019 59.8%; 2021 50.6%; 2022 61.8%; 2023 62.4%; 2024 60.8%; 2025 52.9%
+  PRIOR_PA=200.0: all-years win rate 58.3%, mean gap +0.0043, n=509
+     by year: 2019 59.8%; 2021 51.8%; 2022 61.8%; 2023 61.9%; 2024 62.0%; 2025 52.9%
+  PRIOR_PA=400.0: all-years win rate 58.3%, mean gap +0.0043, n=509
+     by year: 2019 62.1%; 2021 50.6%; 2022 61.8%; 2023 61.9%; 2024 62.0%; 2025 51.8%
+  PRIOR_PA=800.0: all-years win rate 58.0%, mean gap +0.0041, n=509
+     by year: 2019 62.1%; 2021 50.6%; 2022 61.8%; 2023 60.7%; 2024 60.8%; 2025 51.8%
+  PRIOR_PA=1600.0: all-years win rate 57.6%, mean gap +0.0040, n=509
+     by year: 2019 62.1%; 2021 50.6%; 2022 61.8%; 2023 60.7%; 2024 59.5%; 2025 50.6%
+  Walk-forward CV (train = years before holdout):
+    holdout 2023: picked PRIOR_PA=400.0 -> test win rate 61.9% vs baseline 62.4% (delta -0.4pp)
+    holdout 2024: picked PRIOR_PA=400.0 -> test win rate 62.0% vs baseline 60.8% (delta +1.3pp)
+    holdout 2025: picked PRIOR_PA=400.0 -> test win rate 51.8% vs baseline 47.1% (delta +4.7pp)
+    mean held-out win-rate delta: +1.8pp
+  Leave-one-year-out CV (supplementary):
+    holdout 2019: picked PRIOR_PA=200.0 -> test 59.8% vs baseline 60.9% (delta -1.1pp)
+    holdout 2021: picked PRIOR_PA=400.0 -> test 50.6% vs baseline 47.1% (delta +3.5pp)
+    holdout 2022: picked PRIOR_PA=200.0 -> test 61.8% vs baseline 61.8% (delta +0.0pp)
+    holdout 2023: picked PRIOR_PA=200.0 -> test 61.9% vs baseline 62.4% (delta -0.4pp)
+    holdout 2024: picked PRIOR_PA=200.0 -> test 62.0% vs baseline 60.8% (delta +1.3pp)
+    holdout 2025: picked PRIOR_PA=400.0 -> test 51.8% vs baseline 47.1% (delta +4.7pp)
+    mean held-out win-rate delta: +1.3pp
+
+=== DONE ===
+Shipping bar unchanged: repeatable, robust HELD-OUT gains only.

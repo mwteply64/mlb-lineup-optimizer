@@ -1,0 +1,48 @@
+=== RHP PLATOON PRIOR TUNER (symmetric metric) ===
+Tests whether the v16 batter-hand platoon prior (shipped LHP-only)
+would also help the RHP side. Results saved to: ./tuner_rhp_platoon_prior_results_2026-07-20.txt
+
+League platoon priors vs RHP (from 2016/2017/2018 only, PA-weighted, players with >= 50 PA each hand):
+  RHB vs RHP: ratio 0.9811
+  LHB vs RHP: ratio 1.0227
+
+Preloading 18 windows ...
+  18 windows loaded.
+
+Baseline gate: 538 combos matched, max |gap diff| = 0.00e+00 -- PASS
+Baseline (production RHP constants, PRIOR_PA=0): win rate 68.2%, mean gap +0.0055, n=538
+  by year: 2019 71.1%; 2021 64.4%; 2022 64.4%; 2023 70.8%; 2024 70.0%; 2025 68.5%
+
+==================================================================
+SWEEP: PRIOR_PA_RHP   candidates: 0.0, 50.0, 100.0, 200.0, 400.0, 800.0, 1600.0
+==================================================================
+  PRIOR_PA_RHP=0.0: all-years win rate 68.2%, mean gap +0.0055, n=538  <- production
+     by year: 2019 71.1%; 2021 64.4%; 2022 64.4%; 2023 70.8%; 2024 70.0%; 2025 68.5%
+  PRIOR_PA_RHP=50.0: all-years win rate 67.8%, mean gap +0.0054, n=538
+     by year: 2019 71.1%; 2021 64.4%; 2022 63.3%; 2023 70.8%; 2024 70.0%; 2025 67.4%
+  PRIOR_PA_RHP=100.0: all-years win rate 67.7%, mean gap +0.0054, n=538
+     by year: 2019 71.1%; 2021 64.4%; 2022 63.3%; 2023 70.8%; 2024 70.0%; 2025 66.3%
+  PRIOR_PA_RHP=200.0: all-years win rate 67.5%, mean gap +0.0054, n=538
+     by year: 2019 71.1%; 2021 64.4%; 2022 62.2%; 2023 70.8%; 2024 70.0%; 2025 66.3%
+  PRIOR_PA_RHP=400.0: all-years win rate 67.5%, mean gap +0.0054, n=538
+     by year: 2019 71.1%; 2021 64.4%; 2022 62.2%; 2023 70.8%; 2024 70.0%; 2025 66.3%
+  PRIOR_PA_RHP=800.0: all-years win rate 67.5%, mean gap +0.0054, n=538
+     by year: 2019 71.1%; 2021 64.4%; 2022 62.2%; 2023 70.8%; 2024 70.0%; 2025 66.3%
+  PRIOR_PA_RHP=1600.0: all-years win rate 67.3%, mean gap +0.0053, n=538
+     by year: 2019 71.1%; 2021 64.4%; 2022 62.2%; 2023 69.7%; 2024 70.0%; 2025 66.3%
+  Walk-forward CV (train = years before holdout):
+    holdout 2023: picked PRIOR_PA_RHP=0.0 -> test win rate 70.8% vs baseline 70.8% (delta +0.0pp)
+    holdout 2024: picked PRIOR_PA_RHP=0.0 -> test win rate 70.0% vs baseline 70.0% (delta +0.0pp)
+    holdout 2025: picked PRIOR_PA_RHP=0.0 -> test win rate 68.5% vs baseline 68.5% (delta +0.0pp)
+    mean held-out win-rate delta: +0.0pp
+  Leave-one-year-out CV (supplementary):
+    holdout 2019: picked PRIOR_PA_RHP=0.0 -> test 71.1% vs baseline 71.1% (delta +0.0pp)
+    holdout 2021: picked PRIOR_PA_RHP=0.0 -> test 64.4% vs baseline 64.4% (delta +0.0pp)
+    holdout 2022: picked PRIOR_PA_RHP=0.0 -> test 64.4% vs baseline 64.4% (delta +0.0pp)
+    holdout 2023: picked PRIOR_PA_RHP=0.0 -> test 70.8% vs baseline 70.8% (delta +0.0pp)
+    holdout 2024: picked PRIOR_PA_RHP=0.0 -> test 70.0% vs baseline 70.0% (delta +0.0pp)
+    holdout 2025: picked PRIOR_PA_RHP=0.0 -> test 68.5% vs baseline 68.5% (delta +0.0pp)
+    mean held-out win-rate delta: +0.0pp
+
+=== DONE ===
+Shipping bar unchanged: repeatable, robust HELD-OUT gains only.

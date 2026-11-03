@@ -1,0 +1,90 @@
+==================================================================
+HISTORICAL UNCERTAINTY ANALYSIS
+Source: lineup_forward_test_detail_2026-07-10.csv
+==================================================================
+
+------------------------------------------------------------------
+OVERALL  (n=1047, 6 seasons: 2019, 2021, 2022, 2023, 2024, 2025)
+------------------------------------------------------------------
+  Naive row-level bootstrap (treats all combos as independent -- optimistic):
+  win rate    63.4%   95% CI [ 60.5%,  66.4%]
+  mean gap   +0.0049   95% CI [+0.0040, +0.0058]
+  Year-clustered bootstrap (resamples whole seasons -- honest):
+  win rate    63.4%   95% CI [ 60.5%,  65.9%]
+  mean gap   +0.0049   95% CI [+0.0038, +0.0060]
+  Year-clustered CI is 0.9x as wide as the naive CI on win rate.
+  Sign-flip permutation test (H0: mean gap == 0):
+    observed mean gap +0.0049   empirical two-sided p = 0.0000  (< 0.05 -- distinguishable from pure noise)
+
+------------------------------------------------------------------
+vs LHP  (n=509, 6 seasons: 2019, 2021, 2022, 2023, 2024, 2025)
+------------------------------------------------------------------
+  Naive row-level bootstrap (treats all combos as independent -- optimistic):
+  win rate    58.3%   95% CI [ 54.0%,  62.7%]
+  mean gap   +0.0043   95% CI [+0.0028, +0.0057]
+  Year-clustered bootstrap (resamples whole seasons -- honest):
+  win rate    58.3%   95% CI [ 54.5%,  62.0%]
+  mean gap   +0.0043   95% CI [+0.0024, +0.0060]
+  Year-clustered CI is 0.9x as wide as the naive CI on win rate.
+  Sign-flip permutation test (H0: mean gap == 0):
+    observed mean gap +0.0043   empirical two-sided p = 0.0000  (< 0.05 -- distinguishable from pure noise)
+
+------------------------------------------------------------------
+vs RHP  (n=538, 6 seasons: 2019, 2021, 2022, 2023, 2024, 2025)
+------------------------------------------------------------------
+  Naive row-level bootstrap (treats all combos as independent -- optimistic):
+  win rate    68.2%   95% CI [ 64.3%,  72.1%]
+  mean gap   +0.0055   95% CI [+0.0045, +0.0065]
+  Year-clustered bootstrap (resamples whole seasons -- honest):
+  win rate    68.2%   95% CI [ 66.0%,  70.3%]
+  mean gap   +0.0055   95% CI [+0.0045, +0.0064]
+  Year-clustered CI is 0.5x as wide as the naive CI on win rate.
+  Sign-flip permutation test (H0: mean gap == 0):
+    observed mean gap +0.0055   empirical two-sided p = 0.0000  (< 0.05 -- distinguishable from pure noise)
+
+------------------------------------------------------------------
+JUNE 1  (n=358, 6 seasons: 2019, 2021, 2022, 2023, 2024, 2025)
+------------------------------------------------------------------
+  Naive row-level bootstrap (treats all combos as independent -- optimistic):
+  win rate    62.3%   95% CI [ 57.3%,  67.3%]
+  mean gap   +0.0037   95% CI [+0.0023, +0.0051]
+  Year-clustered bootstrap (resamples whole seasons -- honest):
+  win rate    62.3%   95% CI [ 57.5%,  67.0%]
+  mean gap   +0.0037   95% CI [+0.0021, +0.0052]
+  Year-clustered CI is 0.9x as wide as the naive CI on win rate.
+  Sign-flip permutation test (H0: mean gap == 0):
+    observed mean gap +0.0037   empirical two-sided p = 0.0000  (< 0.05 -- distinguishable from pure noise)
+
+------------------------------------------------------------------
+JULY 1  (n=355, 6 seasons: 2019, 2021, 2022, 2023, 2024, 2025)
+------------------------------------------------------------------
+  Naive row-level bootstrap (treats all combos as independent -- optimistic):
+  win rate    62.5%   95% CI [ 57.5%,  67.3%]
+  mean gap   +0.0051   95% CI [+0.0036, +0.0066]
+  Year-clustered bootstrap (resamples whole seasons -- honest):
+  win rate    62.5%   95% CI [ 58.8%,  66.3%]
+  mean gap   +0.0051   95% CI [+0.0037, +0.0065]
+  Year-clustered CI is 0.8x as wide as the naive CI on win rate.
+  Sign-flip permutation test (H0: mean gap == 0):
+    observed mean gap +0.0051   empirical two-sided p = 0.0000  (< 0.05 -- distinguishable from pure noise)
+
+------------------------------------------------------------------
+AUG 1  (n=334, 6 seasons: 2019, 2021, 2022, 2023, 2024, 2025)
+------------------------------------------------------------------
+  Naive row-level bootstrap (treats all combos as independent -- optimistic):
+  win rate    65.6%   95% CI [ 60.5%,  70.7%]
+  mean gap   +0.0059   95% CI [+0.0042, +0.0077]
+  Year-clustered bootstrap (resamples whole seasons -- honest):
+  win rate    65.6%   95% CI [ 62.6%,  69.4%]
+  mean gap   +0.0059   95% CI [+0.0049, +0.0071]
+  Year-clustered CI is 0.7x as wide as the naive CI on win rate.
+  Sign-flip permutation test (H0: mean gap == 0):
+    observed mean gap +0.0059   empirical two-sided p = 0.0000  (< 0.05 -- distinguishable from pure noise)
+
+------------------------------------------------------------------
+vs RHP win rate minus vs LHP win rate (year-clustered)
+------------------------------------------------------------------
+  observed: RHP 68.2% - LHP 58.3% = +9.9%
+  95% CI on the difference: [+6.4%, +13.6%]
+  CI excludes 0 -- the RHP/LHP split holds up even after year-clustering.
+

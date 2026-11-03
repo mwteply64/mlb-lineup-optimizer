@@ -1,0 +1,52 @@
+==================================================================
+LIVE (2026) UNCERTAINTY ANALYSIS
+Source: live_forward_validation_detail_2026-11-03.csv
+NOTE: cluster unit is CUTOFF (only 11 available, all within one season) -- see module docstring.
+==================================================================
+
+------------------------------------------------------------------
+OVERALL  (n=620, 11 cutoffs: 2026-04-15, 2026-04-29, 2026-05-13, 2026-05-27, 2026-06-10, 2026-06-24, 2026-07-08, 2026-07-22, 2026-08-05, 2026-08-19, 2026-09-02)
+------------------------------------------------------------------
+  Naive row-level bootstrap (treats all combos as independent -- optimistic):
+  win rate    57.3%   95% CI [ 53.4%,  61.1%]
+  mean gap   +0.0027   95% CI [+0.0016, +0.0038]
+  Cutoff-clustered bootstrap (resamples whole cutoffs -- honest, but crude with only 11 clusters):
+  win rate    57.3%   95% CI [ 54.6%,  59.7%]
+  mean gap   +0.0027   95% CI [+0.0015, +0.0040]
+  Cutoff-clustered CI is 0.7x as wide as the naive CI on win rate. (With only 11 clusters, treat this as a rough lower bound on true uncertainty, not a precise figure.)
+  Sign-flip permutation test (H0: mean gap == 0):
+    observed mean gap +0.0027   empirical two-sided p = 0.0000  (< 0.05 -- distinguishable from pure noise)
+
+------------------------------------------------------------------
+vs LHP  (n=292, 11 cutoffs: 2026-04-15, 2026-04-29, 2026-05-13, 2026-05-27, 2026-06-10, 2026-06-24, 2026-07-08, 2026-07-22, 2026-08-05, 2026-08-19, 2026-09-02)
+------------------------------------------------------------------
+  Naive row-level bootstrap (treats all combos as independent -- optimistic):
+  win rate    48.6%   95% CI [ 42.8%,  54.5%]
+  mean gap   +0.0010   95% CI [-0.0009, +0.0029]
+  Cutoff-clustered bootstrap (resamples whole cutoffs -- honest, but crude with only 11 clusters):
+  win rate    48.6%   95% CI [ 45.5%,  52.0%]
+  mean gap   +0.0010   95% CI [-0.0009, +0.0030]
+  Cutoff-clustered CI is 0.6x as wide as the naive CI on win rate. (With only 11 clusters, treat this as a rough lower bound on true uncertainty, not a precise figure.)
+  Sign-flip permutation test (H0: mean gap == 0):
+    observed mean gap +0.0010   empirical two-sided p = 0.2863  (NOT distinguishable from pure noise at p<0.05)
+
+------------------------------------------------------------------
+vs RHP  (n=328, 11 cutoffs: 2026-04-15, 2026-04-29, 2026-05-13, 2026-05-27, 2026-06-10, 2026-06-24, 2026-07-08, 2026-07-22, 2026-08-05, 2026-08-19, 2026-09-02)
+------------------------------------------------------------------
+  Naive row-level bootstrap (treats all combos as independent -- optimistic):
+  win rate    64.9%   95% CI [ 59.8%,  69.8%]
+  mean gap   +0.0042   95% CI [+0.0030, +0.0055]
+  Cutoff-clustered bootstrap (resamples whole cutoffs -- honest, but crude with only 11 clusters):
+  win rate    64.9%   95% CI [ 60.4%,  69.1%]
+  mean gap   +0.0042   95% CI [+0.0031, +0.0052]
+  Cutoff-clustered CI is 0.9x as wide as the naive CI on win rate. (With only 11 clusters, treat this as a rough lower bound on true uncertainty, not a precise figure.)
+  Sign-flip permutation test (H0: mean gap == 0):
+    observed mean gap +0.0042   empirical two-sided p = 0.0000  (< 0.05 -- distinguishable from pure noise)
+
+------------------------------------------------------------------
+vs RHP win rate minus vs LHP win rate (cutoff-clustered, only 11 clusters -- wide by construction)
+------------------------------------------------------------------
+  observed: RHP 64.9% - LHP 48.6% = +16.3%
+  95% CI on the difference: [+10.1%, +21.7%]
+  CI excludes 0 -- the RHP/LHP split holds up even after cutoff-clustering, despite only 11 clusters to work with.
+

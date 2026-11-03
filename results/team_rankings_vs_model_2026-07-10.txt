@@ -1,0 +1,72 @@
+HISTORICAL 2019-2025 (shipped v16 engine, n=1,047 combos)
+Ranked so the teams whose REAL lineups do best against the model come first.
+Platoon score = avg players differing between the real top-9 vs LHP and vs RHP.
+
+1. LAD -- model win rate 54.3%, mean gap -0.0013; vs LHP 47.1% / -0.0064; platoon score 1.61; live 2026 50% / -0.0047
+2. ATH -- model win rate 40.6%, mean gap -0.0006; vs LHP 35.7% / -0.0041; platoon score 1.83; live 2026 50% / -0.0028
+3. AZ -- model win rate 52.8%, mean gap +0.0005; vs LHP 44.4% / -0.0032; platoon score 2.00; live 2026 33% / -0.0009
+4. ATL -- model win rate 32.4%, mean gap +0.0006; vs LHP 25.0% / -0.0041; platoon score 0.78; live 2026 33% / -0.0086
+5. LAA -- model win rate 50.0%, mean gap +0.0010; vs LHP 63.6% / +0.0069; platoon score 1.33; live 2026 38% / +0.0052
+6. SF -- model win rate 63.9%, mean gap +0.0017; vs LHP 44.4% / -0.0028; platoon score 2.50; live 2026 44% / -0.0026
+7. TOR -- model win rate 58.3%, mean gap +0.0022; vs LHP 44.4% / +0.0012; platoon score 1.28; live 2026 22% / -0.0149
+8. PHI -- model win rate 54.3%, mean gap +0.0022; vs LHP 52.9% / +0.0015; platoon score 1.56; live 2026 50% / -0.0031
+9. NYM -- model win rate 66.7%, mean gap +0.0024; vs LHP 50.0% / -0.0011; platoon score 1.50; live 2026 50% / +0.0054
+10. CLE -- model win rate 66.7%, mean gap +0.0024; vs LHP 33.3% / -0.0041; platoon score 1.67; live 2026 44% / +0.0015
+11. CIN -- model win rate 54.3%, mean gap +0.0028; vs LHP 64.7% / +0.0040; platoon score 1.78; live 2026 38% / +0.0062
+12. DET -- model win rate 62.9%, mean gap +0.0030; vs LHP 52.9% / +0.0000; platoon score 2.22; live 2026 33% / +0.0009
+13. MIL -- model win rate 57.6%, mean gap +0.0039; vs LHP 40.0% / -0.0039; platoon score 1.94; live 2026 78% / +0.0149
+14. TB -- model win rate 65.7%, mean gap +0.0042; vs LHP 64.7% / +0.0046; platoon score 2.28; live 2026 67% / +0.0086
+15. CHC -- model win rate 71.4%, mean gap +0.0044; vs LHP 82.4% / +0.0061; platoon score 1.39; live 2026 30% / -0.0030
+16. STL -- model win rate 65.7%, mean gap +0.0047; vs LHP 58.8% / +0.0050; platoon score 1.28; live 2026 70% / +0.0054
+17. SEA -- model win rate 60.0%, mean gap +0.0048; vs LHP 47.1% / +0.0050; platoon score 1.94; live 2026 29% / -0.0014
+18. NYY -- model win rate 57.1%, mean gap +0.0052; vs LHP 58.8% / +0.0059; platoon score 0.61; live 2026 40% / +0.0070
+19. MIA -- model win rate 68.6%, mean gap +0.0054; vs LHP 70.6% / +0.0023; platoon score 1.50; live 2026 75% / +0.0051
+20. KC -- model win rate 66.7%, mean gap +0.0056; vs LHP 72.2% / +0.0094; platoon score 1.33; live 2026 67% / +0.0052
+21. CWS -- model win rate 63.9%, mean gap +0.0063; vs LHP 66.7% / +0.0143; platoon score 1.78; live 2026 44% / +0.0021
+22. WSH -- model win rate 71.4%, mean gap +0.0073; vs LHP 64.7% / +0.0091; platoon score 1.28; live 2026 44% / -0.0055
+23. MIN -- model win rate 63.9%, mean gap +0.0073; vs LHP 50.0% / +0.0039; platoon score 1.89; live 2026 33% / -0.0027
+24. BAL -- model win rate 71.4%, mean gap +0.0080; vs LHP 82.4% / +0.0130; platoon score 1.39; live 2026 56% / +0.0145
+25. BOS -- model win rate 69.4%, mean gap +0.0081; vs LHP 83.3% / +0.0145; platoon score 1.39; live 2026 44% / +0.0071
+26. TEX -- model win rate 69.4%, mean gap +0.0082; vs LHP 50.0% / +0.0074; platoon score 1.22; live 2026 100% / +0.0177
+27. SD -- model win rate 72.2%, mean gap +0.0090; vs LHP 72.2% / +0.0099; platoon score 0.94; live 2026 78% / +0.0099
+28. HOU -- model win rate 80.6%, mean gap +0.0110; vs LHP 72.2% / +0.0086; platoon score 0.78; live 2026 71% / +0.0135
+29. COL -- model win rate 82.4%, mean gap +0.0114; vs LHP 70.6% / +0.0096; platoon score 1.17; live 2026 80% / +0.0062
+30. PIT -- model win rate 82.4%, mean gap +0.0139; vs LHP 81.2% / +0.0134; platoon score 1.33; live 2026 38% / +0.0008
+
+Spearman correlations across 30 teams (negative = heavier
+platooning goes with the model doing WORSE against that team):
+  platoon score vs model overall mean gap: -0.428
+  platoon score vs model overall win rate: -0.365
+  platoon score vs model LHP-only mean gap: -0.442
+
+Platoon-intensity ranking alone (heaviest platooning first):
+  1. SF: 2.50
+  2. TB: 2.28
+  3. DET: 2.22
+  4. AZ: 2.00
+  5. SEA: 1.94
+  6. MIL: 1.94
+  7. MIN: 1.89
+  8. ATH: 1.83
+  9. CWS: 1.78
+  10. CIN: 1.78
+  11. CLE: 1.67
+  12. LAD: 1.61
+  13. PHI: 1.56
+  14. NYM: 1.50
+  15. MIA: 1.50
+  16. BAL: 1.39
+  17. CHC: 1.39
+  18. BOS: 1.39
+  19. LAA: 1.33
+  20. KC: 1.33
+  21. PIT: 1.33
+  22. STL: 1.28
+  23. WSH: 1.28
+  24. TOR: 1.28
+  25. TEX: 1.22
+  26. COL: 1.17
+  27. SD: 0.94
+  28. ATL: 0.78
+  29. HOU: 0.78
+  30. NYY: 0.61

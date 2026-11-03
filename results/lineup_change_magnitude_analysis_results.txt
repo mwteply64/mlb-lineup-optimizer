@@ -1,0 +1,120 @@
+==================================================================
+HISTORICAL (2019-2025) -- LINEUP-CHANGE-MAGNITUDE BREAKDOWN
+Source: lineup_forward_test_detail_2026-07-09.csv  (n=1048)
+==================================================================
+
+n_diff=0 (optimal lineup == real lineup, no change made): 25 combos, 2.4% of the data.
+These are trivial by construction (win is always False, gap is always 0 -- there's nothing for the model to be tested on). Excluded below.
+
+Quick summary (no resampling yet):
+  bucket      n   win rate     mean gap   median gap
+  1         290     62.8%      +0.0035      +0.0025
+  2         442     65.2%      +0.0050      +0.0057
+  3+        291     63.9%      +0.0061      +0.0055
+
+------------------------------------------------------------------
+1-swap combos  (n=290, 6 year clusters: 2019, 2021, 2022, 2023, 2024, 2025)
+------------------------------------------------------------------
+  Naive row-level bootstrap (treats all combos as independent -- optimistic):
+  win rate    62.8%   95% CI [ 57.2%,  68.3%]
+  mean gap   +0.0035   95% CI [+0.0025, +0.0046]
+  Year-clustered bootstrap (resamples whole years -- honest):
+  win rate    62.8%   95% CI [ 61.1%,  64.3%]
+  mean gap   +0.0035   95% CI [+0.0027, +0.0043]
+  Clustered CI is 0.3x as wide as the naive CI on win rate.
+  Sign-flip permutation test (H0: mean gap == 0):
+    observed mean gap +0.0035   empirical two-sided p = 0.0000  (< 0.05 -- distinguishable from pure noise)
+
+------------------------------------------------------------------
+2-swap combos  (n=442, 6 year clusters: 2019, 2021, 2022, 2023, 2024, 2025)
+------------------------------------------------------------------
+  Naive row-level bootstrap (treats all combos as independent -- optimistic):
+  win rate    65.2%   95% CI [ 60.6%,  69.7%]
+  mean gap   +0.0050   95% CI [+0.0036, +0.0063]
+  Year-clustered bootstrap (resamples whole years -- honest):
+  win rate    65.2%   95% CI [ 59.6%,  70.7%]
+  mean gap   +0.0050   95% CI [+0.0026, +0.0073]
+  Clustered CI is 1.2x as wide as the naive CI on win rate.
+  Sign-flip permutation test (H0: mean gap == 0):
+    observed mean gap +0.0050   empirical two-sided p = 0.0000  (< 0.05 -- distinguishable from pure noise)
+
+------------------------------------------------------------------
+3+-swap combos  (n=291, 6 year clusters: 2019, 2021, 2022, 2023, 2024, 2025)
+------------------------------------------------------------------
+  Naive row-level bootstrap (treats all combos as independent -- optimistic):
+  win rate    63.9%   95% CI [ 58.4%,  69.4%]
+  mean gap   +0.0061   95% CI [+0.0039, +0.0082]
+  Year-clustered bootstrap (resamples whole years -- honest):
+  win rate    63.9%   95% CI [ 60.5%,  67.8%]
+  mean gap   +0.0061   95% CI [+0.0044, +0.0083]
+  Clustered CI is 0.7x as wide as the naive CI on win rate.
+  Sign-flip permutation test (H0: mean gap == 0):
+    observed mean gap +0.0061   empirical two-sided p = 0.0000  (< 0.05 -- distinguishable from pure noise)
+
+------------------------------------------------------------------
+n_diff=3+ win rate minus n_diff=1 win rate (year-clustered, 6 clusters)
+------------------------------------------------------------------
+  observed: 3+-swap 63.9% - 1-swap 62.8% = +1.2%
+  95% CI on the difference: [-2.6%, +5.4%]
+  CI straddles 0 -- bigger swaps are NOT clearly better than small ones given this much clustering.
+
+==================================================================
+LIVE (2026) -- LINEUP-CHANGE-MAGNITUDE BREAKDOWN
+Source: live_forward_validation_detail_2026-07-09.csv  (n=262)
+==================================================================
+
+n_diff=0 (optimal lineup == real lineup, no change made): 3 combos, 1.1% of the data.
+These are trivial by construction (win is always False, gap is always 0 -- there's nothing for the model to be tested on). Excluded below.
+
+Quick summary (no resampling yet):
+  bucket      n   win rate     mean gap   median gap
+  1          58     48.3%      -0.0004      +0.0000
+  2         105     50.5%      +0.0033      +0.0001
+  3+         96     53.1%      +0.0030      +0.0012
+
+------------------------------------------------------------------
+1-swap combos  (n=58, 5 cutoff clusters: 2026-04-15, 2026-04-29, 2026-05-13, 2026-05-27, 2026-06-10)
+------------------------------------------------------------------
+  Naive row-level bootstrap (treats all combos as independent -- optimistic):
+  win rate    48.3%   95% CI [ 36.2%,  60.3%]
+  mean gap   -0.0004   95% CI [-0.0028, +0.0020]
+  Cutoff-clustered bootstrap (resamples whole cutoffs -- honest):
+  win rate    48.3%   95% CI [ 46.9%,  50.0%]
+  mean gap   -0.0004   95% CI [-0.0016, +0.0006]
+  Clustered CI is 0.1x as wide as the naive CI on win rate.
+  Sign-flip permutation test (H0: mean gap == 0):
+    observed mean gap -0.0004   empirical two-sided p = 0.7597  (NOT distinguishable from pure noise at p<0.05)
+
+------------------------------------------------------------------
+2-swap combos  (n=105, 5 cutoff clusters: 2026-04-15, 2026-04-29, 2026-05-13, 2026-05-27, 2026-06-10)
+------------------------------------------------------------------
+  Naive row-level bootstrap (treats all combos as independent -- optimistic):
+  win rate    50.5%   95% CI [ 41.0%,  60.0%]
+  mean gap   +0.0033   95% CI [+0.0004, +0.0063]
+  Cutoff-clustered bootstrap (resamples whole cutoffs -- honest):
+  win rate    50.5%   95% CI [ 45.3%,  55.2%]
+  mean gap   +0.0033   95% CI [+0.0008, +0.0066]
+  Clustered CI is 0.5x as wide as the naive CI on win rate.
+  Sign-flip permutation test (H0: mean gap == 0):
+    observed mean gap +0.0033   empirical two-sided p = 0.0303  (< 0.05 -- distinguishable from pure noise)
+
+------------------------------------------------------------------
+3+-swap combos  (n=96, 5 cutoff clusters: 2026-04-15, 2026-04-29, 2026-05-13, 2026-05-27, 2026-06-10)
+------------------------------------------------------------------
+  Naive row-level bootstrap (treats all combos as independent -- optimistic):
+  win rate    53.1%   95% CI [ 42.7%,  63.5%]
+  mean gap   +0.0030   95% CI [-0.0013, +0.0074]
+  Cutoff-clustered bootstrap (resamples whole cutoffs -- honest):
+  win rate    53.1%   95% CI [ 45.3%,  60.6%]
+  mean gap   +0.0030   95% CI [-0.0007, +0.0074]
+  Clustered CI is 0.7x as wide as the naive CI on win rate.
+  Sign-flip permutation test (H0: mean gap == 0):
+    observed mean gap +0.0030   empirical two-sided p = 0.1844  (NOT distinguishable from pure noise at p<0.05)
+
+------------------------------------------------------------------
+n_diff=3+ win rate minus n_diff=1 win rate (cutoff-clustered, 5 clusters)
+------------------------------------------------------------------
+  observed: 3+-swap 53.1% - 1-swap 48.3% = +4.8%
+  95% CI on the difference: [-3.8%, +13.2%]
+  CI straddles 0 -- bigger swaps are NOT clearly better than small ones given this much clustering.
+
